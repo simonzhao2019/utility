@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script src="subPub.js"></script>
+<script>
+ pubSub.subscribe('add', (data) => {
+ console.log('add()...', data)
+ })
+ pubSub.subscribe('add', (data) => {
+ console.log('add2()...', data)
+ })
+ const token = pubSub.subscribe('add', (data) => {
+ console.log('add3()...', data)
+ })
+ pubSub.subscribe('update', (data) => {
+ console.log('update()...', data)
+ })
+
+
+
+ pubSub.publish('add', 12)
+ pubSub.publish('update', 13)
+
+
+
+</script>
+</html>
