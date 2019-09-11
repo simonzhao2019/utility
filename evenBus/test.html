@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script src="./eventBus.js">
+</script>
+<script>
+console.log(window.eventBus)
+
+
+eventBus.on('add', (data) => {
+console.log('add', data)
+})
+eventBus.on('add', (data) => {
+console.log('add2', data)
+})
+eventBus.on('delete', (data) => {
+console.log('delete', data)
+})
+// eventBus.off('add')
+
+
+eventBus.cancel()
+eventBus.emit("add",123)
+</script>
+</html>
