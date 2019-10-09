@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+
+  //定义在原型链上
+  Array.prototype.unique=function(){
+    const arr=[]
+    for (let index = 0; index < this.length; index++) {
+     if( this.indexOf(this[index])===index){
+       arr.push(this[index])
+     }
+      
+    }
+  return arr
+  }
+  let arr=[5,7,8,9,7,9,89,7]
+  console.log(arr.unique())
+//直接定义成函数的形式
+function unique2(arr) {
+  const temp=[]
+  for (let index = 0; index < arr.length; index++) {
+    if(arr.indexOf(arr[index])===index){
+      temp.push(arr[index])
+    }
+    
+  }
+  return temp
+}
+  console.log(unique2(arr))
+</script>
+</html>

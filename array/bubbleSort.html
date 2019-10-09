@@ -9,19 +9,19 @@
   <script>
     const arr = [2, 5, 1, 45, 14, 17];
 //冒泡排序
-    Array.bubbleSort=(arr)=>{
-      let temp;
-      for (let i = 0; i < arr.length - 1; i++) {
-        for (let j = 0; j < arr.length - i - 1; j++) {
-          if (arr[j] > arr[j + 1]) {
-            temp = arr[j];
-            arr[j] = arr[j + 1];
-            arr[j + 1] = temp;
+    Array.prototype.bubbleSort=function(){
+       let temp;
+      for (let i = 0; i < this.length - 1; i++) {
+        for (let j = 0; j < this.length - i - 1; j++) {
+          if (this[j] > this[j + 1]) {
+            temp = this[j];
+            this[j] = this[j + 1];
+            this[j + 1] = temp;
           }
         }
       }
-      return arr; 
+      return this; 
     }
-   console.log( Array.bubbleSort(arr))
+   console.log(arr.bubbleSort())
   </script>
 </html>
